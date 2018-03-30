@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MainForm.ui.qml</file>
+        <file>Grille.jpg</file>
+        <file>jeu.cpp</file>
+        <file>jeu.h</file>
+        <file>joueur.cpp</file>
+        <file>joueur.h</file>
+        <file>main.cpp</file>
+        <file>piece.cpp</file>
+        <file>piece.h</file>
+        <file>zonetext.cpp</file>
+        <file>zonetext.h</file>
+    </qresource>
+</RCC>
