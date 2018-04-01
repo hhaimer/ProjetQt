@@ -4,8 +4,10 @@ import QtQuick.Layouts 1.3
 
 Item
 {
+    id: item1
     width: 550
     height: 480
+    parent: none.none
     property alias button: button
     property alias rectPPal: rectPPal
     property alias piece9: piece9
@@ -34,6 +36,7 @@ Item
     property alias mouseArea2: mouseArea2
     property alias mouseArea3: mouseArea3
 
+
     Text
     {
         id: joueur1
@@ -51,6 +54,8 @@ Item
         font.pixelSize: 28
     }
 
+
+
     Text
     {
         id: joueur2
@@ -66,6 +71,8 @@ Item
         font.pixelSize: 28
     }
 
+
+
     Rectangle
     {
         id: couleurJ1
@@ -76,6 +83,22 @@ Item
         color: "#00cc99"
         border.color: "#000000"
         border.width: 4
+    }
+
+
+    MouseArea
+    {
+        id: mouseArea
+        anchors.fill: parent
+
+        Button {
+            id: button
+            x: 444
+            y: 419
+            width: 70
+            height: 53
+            text: qsTr("Rejouez")
+        }
     }
 
     Rectangle
@@ -89,6 +112,7 @@ Item
         border.color: "#000000"
         border.width: 4
     }
+
 
     Text
     {
@@ -105,20 +129,6 @@ Item
         font.pixelSize: 19
     }
 
-    MouseArea
-    {
-        id: mouseArea
-        anchors.fill: parent
-
-        Button {
-            id: button
-            x: 444
-            y: 419
-            width: 70
-            height: 53
-            text: qsTr("Rejouez")
-        }
-    }
 
     Rectangle
     {

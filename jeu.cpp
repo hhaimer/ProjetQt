@@ -30,6 +30,10 @@ void jeu::pilotage(int slot)
                 tours_compt++ ;
             }
         }
+        else
+        {
+            jeu::second_Etape(slot) ;
+        }
         // à la fin de chaque tours, on teste si quelqu'un à gagner et on change les différents paramètres.
         victoire() ;
         changePos() ;
@@ -57,6 +61,46 @@ void jeu::newpiece(){
 void jeu::premiere_Etape(int slot)
 {
     pieceListe[tours_compt] = piece(tours_compt % 2, slot) ;
+}
+
+void jeu::second_Etape(int slot)
+{
+    bool existsalready = false, occupiedalready = false ;
+    for(int i = 0 ; i < 6 ; i++) // Première etape selectionné le pion qu'on veut déplacer
+                                 //Parcourir la grille, et changer la proporièté du pion selectionné de false to true
+    {
+       if(slot == pieceListe[i].getPosition() && tours_compt % 2 == i % 2)
+       {
+           existsalready = true ; //Des que le pion selectionné est trouvé, nous allons changé la valeur de sa position qu'il existe dans cet endroit
+           for(int j = 0 ; j < 6 ; j++)
+           {
+               if(pieceListe[j].getSelected() == true)
+               {
+                   pieceListe[j].setSelected(false) ;
+               }
+           }
+           pieceListe[i].setSelected(true) ;
+        }
+    }
+    if (existsalready == false) //deuxieme etape lors du deplacement du pion, si la place choisi est vide
+    {
+        for(int k = 0 ; k < 6 && k < tours_compt ; k++)
+        {
+            if(slot == pieceListe[k].getPosition())
+                occupiedalready = true ;
+        }
+        if(occupiedalready == false)
+        {
+            for(int l = 0 ; l < 6 ; l++)
+            {
+                if(pieceListe[l].getSelected() == true)
+                {
+                    pieceListe[l].setPosition(slot) ;
+                    tours_compt++ ;
+                }
+            }
+        }
+    }
 }
 
 QList<QString> jeu::readPos()

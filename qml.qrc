@@ -12,5 +12,7 @@
         <file>piece.h</file>
         <file>zonetext.cpp</file>
         <file>zonetext.h</file>
+        <file>Instructions.qml</file>
+        <file>InstructionsForm.ui.qml</file>
     </qresource>
 </RCC>

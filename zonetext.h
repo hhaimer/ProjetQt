@@ -12,7 +12,6 @@ public:
     string get_instructions() ;
     void joueur_Actu(string joueur) ;
     void gagnant(int joueur) ;
-    void finpartie() ;
     void top_Depart() ;
     void dephasage() ;
     void fin() ;

@@ -12,7 +12,8 @@ class jeu : public QObject //Permet l'intéraction avec l'interface graphique
 public:
     explicit jeu(string nom_Joueur1, string nom_Joueur2, QObject *parent = 0) ;
     Q_INVOKABLE void pilotage(int slot) ; //On l'appele à chaque coup pour piloter le jeu et afficher les pions sur la positions souhaitées
-    void premiere_Etape(int slot) ; //gère la parti quand les 6 jetons ne sont pas encore mis
+    void premiere_Etape(int slot);
+    void second_Etape(int slot); //gère la parti quand les 6 jetons ne sont pas encore mis
     Q_INVOKABLE QList<QString> readPos() ; //liste des positions utilisées
     Q_INVOKABLE QList<QString> readBord() ;//liste des bordures
     Q_INVOKABLE QList<bool> readVis() ;
